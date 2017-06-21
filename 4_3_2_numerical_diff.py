@@ -1,23 +1,21 @@
 import numpy as np
-from mnist import load_mnist
-from PIL import Image
+import matplotlib.pylab as plt
 
-def img_show(img):
-    pil_img = Image.fromarray(np.uint8(img))
-    pil_img.show()
+def numerical_diff(f, x):
+    h = 1e-4 # 0.0001
+    return (f(x+h) - f(x-h)) / (2*h)
 
-(x_train, t_train), (x_test, t_test) = load_mnist(normalize=True, one_hot_label=True)
+def function_1(x):
+    return 0.01*x**2 + 0.1*x
 
-print(x_train.shape)
-print(t_train.shape)
+x = np.arange(0.0, 20.0, 0.1)
+y = function_1(x)
+plt.xlabel("x")
+plt.ylabel("f(x)")
+plt.plot(x,y)
+plt.show()
 
-train_size = x_train.shape[0]
-batch_size = 10
-batch_mask = np.random.choice(train_size, batch_size)
+print(numerical_diff(function_1, 5))
+print(numerical_diff(function_1, 10))
 
-print(batch_mask)
-x_batch = x_train[batch_mask]
-t_batch = t_train[batch_mask]
 
-print(x_batch)
-print(t_batch)
