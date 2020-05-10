@@ -9,7 +9,7 @@ http://hendigi.karaage.xyz/raspberry-pi/image_processing/zero-deeplearning/
 https://github.com/oreilly-japan/deep-learning-from-scratch
 
 
-3.6章のファイル実行時は本リポジトリの中で以下コマンド実行して、公式サイトとからいくつかのファイルをコピーする必要があります
+3.6章のファイル実行時は本リポジトリの中で以下コマンド実行して、公式サイトからいくつかのファイルをコピーする必要があります
 ```sh
 $ git clone https://github.com/oreilly-japan/deep-learning-from-scratch
 $ cp deep-learning-from-scratch/dataset/mnist.py ./
